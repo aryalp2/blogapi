@@ -1,12 +1,12 @@
+// blogpost.model.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
 // BlogPost Schema
 const BlogPostSchema = mongoose.Schema({
-    url:{
+    url: {
         type: String,
         required: true,
-        unique: true
+    unique: true
     },
     title: {
         type: String,
@@ -25,5 +25,4 @@ const BlogPostSchema = mongoose.Schema({
         type: Date
     }
 });
-
 module.exports = mongoose.model('BlogPost', BlogPostSchema);
