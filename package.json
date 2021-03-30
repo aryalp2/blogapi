@@ -1,0 +1,30 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryalp2/blogapi.git"
+  },
+  "author": "Prashant Aryal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryalp2/blogapi/issues"
+  },
+  "homepage": "https://github.com/aryalp2/blogapi#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "4.17.1",
+    "mongoose": "5.12.2"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "chai-http": "4.3.0",
+    "mocha": "8.3.2",
+    "nodemon": "2.0.7"
+  }
+}
