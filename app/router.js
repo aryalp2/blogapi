@@ -18,6 +18,9 @@ module.exports = app => {
     // Get a new blog post
     blogPostRoutes.get('/', BlogController.getPost);
 
+    // get a new blog by id
+    blogPostRoutes.get('/:id', BlogController.getPostById);
+
     // url for all API routes
     app.use('/api', apiRoutes);
 };

@@ -32,8 +32,20 @@ exports.getPost = (req, res) => {
                 msg: 'Server encountered error'
             });
         } else {
-            console.log("a");
             res.json(blog);
+        }
+    })
+}
+
+exports.getPostById = (req, res) => {
+    return BlogPost.findById(req.params.id, (err, blog) => {
+        if (err) {
+            res.status(404).json({
+                msg: 'Server encountered error'
+            });
+        } else {
+            console.log(req.params.id)
+            res.json(blog.body);
         }
     })
 }
