@@ -21,6 +21,12 @@ module.exports = app => {
     // get a new blog by id
     blogPostRoutes.get('/:id', BlogController.getPostById);
 
+    // delete a blog by id
+    blogPostRoutes.delete('/delete/:id', BlogController.deletePostById);
+
+    // patch a blog by id
+    blogPostRoutes.patch('/update/:id', BlogController.updatePostById);
+
     // url for all API routes
     app.use('/api', apiRoutes);
 };

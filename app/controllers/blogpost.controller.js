@@ -41,11 +41,42 @@ exports.getPostById = (req, res) => {
     return BlogPost.findById(req.params.id, (err, blog) => {
         if (err) {
             res.status(404).json({
-                msg: 'Server encountered error'
+                msg: 'Server encountered error loading the blog'
             });
         } else {
-            console.log(req.params.id)
-            res.json(blog.body);
+            console.log(req.params.id);
+            res.json({
+                'title': blog.title,
+                'body':blog.body
+            });
         }
-    })
+    });
+}
+
+exports.deletePostById = (req, res) => {
+    return BlogPost.findByIdAndDelete(req.params.id, (err, blogPost) => {
+        if (err) {
+            res.status(404).json({
+                msg: 'Server encountered error loading the blogPost'
+            });
+        } else {
+            res.json({
+                msg: `Successfully deleted ${blogPost.title}`
+            });
+        }
+    });
+}
+
+exports.updatePostById = (req, res) => {
+    return BlogPost.findByIdAndUpdate(req.params.id, req.body, (err, updatePost) => {
+        if (err) {
+            res.status(404).json({
+                msg: "Server encountered error during updating"
+            });
+        } else {
+            res.json({
+                msg: `Successfully updated ${updatePost.title}`
+            })
+        }
+    });
 }
