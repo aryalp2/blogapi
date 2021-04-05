@@ -1,4 +1,5 @@
 "use strict"
+const blogpostModel = require('../models/blogpost.model');
 const BlogPost = require('../models/blogpost.model');
 
 // Create a new blog post
@@ -44,10 +45,11 @@ exports.getPostById = (req, res) => {
                 msg: 'Server encountered error loading the blog'
             });
         } else {
-            console.log(req.params.id);
             res.json({
+                'id': blog.id,
                 'title': blog.title,
-                'body':blog.body
+                'body':blog.body,
+                'date': blog.date
             });
         }
     });

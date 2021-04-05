@@ -3,8 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./app/config');
 const router = require('./app/router');
+const cors = require('cors');
+
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
