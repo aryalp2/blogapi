@@ -23,8 +23,11 @@ class Forms extends Component {
                     <div>
                         <form className= {!this.state.form ? "form" : "onClickForm"}>
                             <input onChange = {this.handleChange} name="url" placeholder="URL for your blog" value={this.state.url} />
+
                             <input onChange = {this.handleChange} name="title" placeholder="Title of your blog" value={this.state.title} />
+
                             <textarea rows="4" cols="50" onChange = {this.handleChange} name="body" placeholder="Body for your blog" value={this.state.body} />
+
                         </form>
                         <button type="submit" className= {!this.state.form ? "form" : "onClickForm"} onClick={() => this.whenClick()}>Submit</button>
                     </div>

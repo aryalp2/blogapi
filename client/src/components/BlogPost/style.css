@@ -1,7 +1,7 @@
 .blogPostContainer{
     display: flex;
     padding: 5%;
-    width: 50%;
+    width: 80%;
 }
 
 .blogHeader{
@@ -42,6 +42,7 @@
     text-align: justify;
 }
 
+
 .blogList ul{
     list-style: none;
     padding: 0%;
@@ -49,9 +50,23 @@
 
 .blogList ul li {
     margin-bottom: 1%;
-}
-
-.blogList ul li a{
+    display: inline-block;
     text-decoration: none;
     color: #333;
+}
+
+img{
+    width: 200px;
+    height: 150px;
+    display: flex;
+    margin-right: 10px;
+}
+
+.individualImage{
+    width: 500px;
+    height: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 20px;
 }

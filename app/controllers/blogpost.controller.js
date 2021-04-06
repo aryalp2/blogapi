@@ -46,6 +46,7 @@ exports.getPostById = (req, res) => {
             });
         } else {
             res.json({
+                'url': blog.url,
                 'id': blog.id,
                 'title': blog.title,
                 'body':blog.body,
