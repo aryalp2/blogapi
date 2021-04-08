@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from '../../UI/Card';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import '../Form.css'
+import Moment from 'react-moment';
 
 export default class Individual extends Component {
 
@@ -77,11 +77,11 @@ export default class Individual extends Component {
                     <div>
                         <div className="blogHeader">
                             <h1 className="postTitle">{this.state.blogData.title} </h1>
-                            <span className = "postedBy"> Posted on {this.state.blogData.date} </span>
+                            <span className = "postedBy"> Posted on <Moment format="MMM DD YYYY" >{this.state.blogData.date}</Moment> </span>
                         </div>
 
                         <div className="postContent">
-                        <img className="individualImage" src= {`${this.state.blogData.url}`} alt="Images" ></img>
+                            <img className="individualImage" src= {`${this.state.blogData.url}`} alt="Images" ></img>
                             <h2>{this.state.blogData.title}</h2>
                             <p style={{width:'95%'}}>{this.state.blogData.body}</p>
                         </div>
@@ -93,10 +93,13 @@ export default class Individual extends Component {
 
                         <div className="updateForm">
                             <form className= {!this.state.form ? "form" : "onClickForm"}>
+                                <label>Edit url</label>
                                 <input onChange = {this.handleChange} name="url" placeholder="Update URL " defaultValue={this.state.blogData.url} />
-
+                                <br></br>
+                                <label>Edit Title</label>
                                 <input onChange = {this.handleChange} name="title" placeholder="Update Title" defaultValue={this.state.blogData.title} />
-
+                                <br></br>
+                                <label>Edit body</label>
                                 <textarea rows="4" cols="50" onChange = {this.handleChange} name="body" placeholder="Update Body" defaultValue={this.state.blogData.body} />
                             </form>
                         </div>
